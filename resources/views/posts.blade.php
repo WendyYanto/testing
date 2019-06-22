@@ -26,7 +26,11 @@
             @foreach($posts as $key => $post)
              <tr>
               <td>{{++$key}}</td>
-               <td>{{$post->post_name}}</td>
+               <td>
+                  <a href="{{url('/post/'.$post->id)}}">
+                  {{$post->post_name}}
+                </a>
+                </td>
                <td>{{$post->post_title}}</td>
                <td>{{$post->post_content}}</td>
                <td>

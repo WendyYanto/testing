@@ -43,4 +43,18 @@ class PostController extends Controller
     	$post->delete();
     	return back();
     }
+
+    public function getPost(Request $request, $id){
+        $post = Post::findOrfail($id);
+        return view('update_post', compact('post'));
+    }
+
+    public function updatePost(Request $request, $id){
+        $post = Post::findOrfail($id);
+        $post->post_name = $request->post_name;
+        $post->post_title = $request->post_title;
+        $post->post_content =$request->post_content;
+        $post->save();
+        return redirect('/posts');
+    }
 }

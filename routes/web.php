@@ -15,3 +15,5 @@ Route::get('/posts', 'PostController@getAll');
 Route::get('/bebas', 'PostController@createPost');
 Route::post('/insertPost', 'PostController@insertPost');
 Route::delete('/deletePost/{id}', 'PostController@deletePost');
+Route::get('/post/{id}', 'PostController@getPost');
+Route::patch('/post/update/{id}', 'PostController@updatePost');
